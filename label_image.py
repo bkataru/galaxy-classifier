@@ -1,12 +1,13 @@
-import tensorflow as tf, sys
+import tensorflow.compat.v1 as tf
+import sys, os
 image_path = sys.argv[1]
 # Read in the image_data
 image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 # Loads label file, strips off carriage return
 label_lines = [line.rstrip() for line
-    in tf.gfile.GFile("C:/Users/Kaves/Documents/python_files/tensorflow-projects/galaxyclassifier//retrained_labels.txt")]
+    in tf.gfile.GFile("{}\\retrained_labels.txt".format(os.getcwd()))]
 # Unpersists graph from file
-with tf.gfile.FastGFile("C:/Users/Kaves/Documents/python_files/tensorflow-projects/galaxyclassifier/retrained_graph.pb", 'rb') as f:
+with tf.gfile.FastGFile("{}\\retrained_graph.pb".format(os.getcwd()), 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')

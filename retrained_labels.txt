@@ -1,2 +1,3 @@
 elliptical
+irregular
 spiral

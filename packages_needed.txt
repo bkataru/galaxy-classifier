@@ -1,0 +1,6 @@
+More informal than requirements.txt
+
+numpy
+six
+matplotlib
+tensorflow/tensorflow-gpu
