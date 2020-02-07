@@ -9,7 +9,7 @@ Check `requirements.txt` and `packages_neded.txt` for module information.
 ## Quick start
 
 ### To train: 
-- First generate the training command using `generate_training_command.py`
+- First generate the training command using `generate_training_command.py`. The command relies on specifying the absolute path so the script will generate the command specific to your environment.
   ```shell
   python generate_training_command.py
   ```
